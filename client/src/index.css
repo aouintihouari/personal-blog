@@ -1,0 +1,471 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("/assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@theme {
+  /* Color neutral */
+  --color-neutral-900: #1c1a19;
+  --color-neutral-800: #201e1d;
+  --color-neutral-700: #34302d;
+  --color-neutral-600: #4a4846;
+  --color-neutral-400: #c0bfbe;
+  --color-neutral-300: #dedcd8;
+  --color-neutral-200: #f0edeb;
+  --color-neutral-100: #fbf9f7;
+  --color-neutral-0: #ffffff;
+
+  /* Color blue */
+  --color-blue-100: #1975fb;
+  --color-blue-200: #e1f1fe;
+  --color-blue-300: #68e0ff;
+  --color-blue-500: #93cefc;
+  --color-blue-700: #75b0de;
+  --color-blue-800: #5792c0;
+  --color-blue-900: #0d284a;
+
+  /* Color green */
+  --color-green-200: #e9f5ea;
+  --color-green-500: #9dc3a9;
+  --color-green-700: #008531;
+  --color-green-900: #132a18;
+
+  /* Color yellow */
+  --color-yellow-200: #fff5e1;
+  --color-yellow-500: #facd79;
+  --color-yellow-700: #ea8806;
+  --color-yellow-900: #4a3003;
+
+  /* Color red */
+  --color-red-400: #f04438;
+  --color-red-600: #d92d20;
+
+  /* Color orange */
+  --color-orange-100: #ff5100;
+
+  /* Color purple */
+  --color-purple-100: #a138ff;
+  --color-purple-200: #d390f3;
+
+  /* Color pink */
+  --color-pink-100: #fc6774;
+
+  /* Font families */
+  --font-sans: "DM Sans", sans-serif;
+  --font-code: "Fira Code", monospace;
+
+  /* Text Preset 1 */
+  --text-preset-1-size: 40px;
+  --text-preset-1-line: 130%;
+  --text-preset-1-spacing: -1px;
+  --text-preset-1-weight: 800;
+
+  /* Text Preset 2 */
+  --text-preset-2-size: 32px;
+  --text-preset-2-line: 130%;
+  --text-preset-2-spacing: -0.5px;
+  --text-preset-2-weight: 800;
+
+  /* Text Preset 3 */
+  --text-preset-3-size: 26px;
+  --text-preset-3-line: 130%;
+  --text-preset-3-spacing: -0.5px;
+  --text-preset-3-weight: 700;
+
+  /* Text Preset 4 */
+  --text-preset-4-size: 24px;
+  --text-preset-4-line: 130%;
+  --text-preset-4-spacing: -0.5px;
+  --text-preset-4-weight: 600;
+
+  /* Text Preset 5 */
+  --text-preset-5-size: 20px;
+  --text-preset-5-line: 130%;
+  --text-preset-5-spacing: -0.5px;
+  --text-preset-5-weight: 600;
+
+  /* Text Preset 6 */
+  --text-preset-6-size: 18px;
+  --text-preset-6-line: 150%;
+  --text-preset-6-spacing: -0.5px;
+  --text-preset-6-weight: 500;
+
+  /* Text Preset 7 */
+  --text-preset-7-size: 18px;
+  --text-preset-7-line: 150%;
+  --text-preset-7-spacing: -0.2px;
+  --text-preset-7-weight: 400;
+
+  /* Text Preset 7 (SemiBold) */
+  --text-preset-7sb-weight: 600;
+
+  /* Text Preset 8 */
+  --text-preset-8-size: 16px;
+  --text-preset-8-line: 150%;
+  --text-preset-8-spacing: -0.2px;
+  --text-preset-8-weight: 400;
+
+  /* Text Preset 8 (Italic) */
+  --text-preset-8-italic: italic;
+
+  /* Text Preset 9 - Code */
+  --text-preset-9-size: 16px;
+  --text-preset-9-line: 130%;
+  --text-preset-9-spacing: -0.5px;
+  --text-preset-9-weight: 400;
+
+  --spacing-0: 0px;
+  --spacing-025: 2px;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+}
+
+@utilities {
+  .bg-neutral-900 {
+    background-color: var(--color-neutral-900);
+  }
+  .bg-neutral-800 {
+    background-color: var(--color-neutral-800);
+  }
+  .bg-neutral-700 {
+    background-color: var(--color-neutral-700);
+  }
+  .bg-neutral-600 {
+    background-color: var(--color-neutral-600);
+  }
+  .bg-neutral-400 {
+    background-color: var(--color-neutral-400);
+  }
+  .bg-neutral-300 {
+    background-color: var(--color-neutral-300);
+  }
+  .bg-neutral-200 {
+    background-color: var(--color-neutral-200);
+  }
+  .bg-neutral-100 {
+    background-color: var(--color-neutral-100);
+  }
+  .bg-neutral-0 {
+    background-color: var(--color-neutral-0);
+  }
+
+  .bg-blue-200 {
+    background-color: var(--color-blue-200);
+  }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-blue-700 {
+    background-color: var(--color-blue-700);
+  }
+  .bg-blue-800 {
+    background-color: var(--color-blue-800);
+  }
+  .bg-blue-900 {
+    background-color: var(--color-blue-900);
+  }
+
+  .bg-green-200 {
+    background-color: var(--color-green-200);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
+  }
+  .bg-green-700 {
+    background-color: var(--color-green-700);
+  }
+  .bg-green-900 {
+    background-color: var(--color-green-900);
+  }
+
+  .bg-yellow-200 {
+    background-color: var(--color-yellow-200);
+  }
+  .bg-yellow-500 {
+    background-color: var(--color-yellow-500);
+  }
+  .bg-yellow-700 {
+    background-color: var(--color-yellow-700);
+  }
+  .bg-yellow-900 {
+    background-color: var(--color-yellow-900);
+  }
+
+  .bg-red-400 {
+    background-color: var(--color-red-400);
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
+  }
+}
+
+.text-preset-1 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  line-height: var(--text-preset-1-line);
+  letter-spacing: var(--text-preset-1-spacing);
+}
+
+.text-preset-2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-2-size);
+  font-weight: var(--text-preset-2-weight);
+  line-height: var(--text-preset-2-line);
+  letter-spacing: var(--text-preset-2-spacing);
+}
+
+.text-preset-3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-3-size);
+  font-weight: var(--text-preset-3-weight);
+  line-height: var(--text-preset-3-line);
+  letter-spacing: var(--text-preset-3-spacing);
+}
+
+.text-preset-4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--text-preset-4-weight);
+  line-height: var(--text-preset-4-line);
+  letter-spacing: var(--text-preset-4-spacing);
+}
+
+.text-preset-5 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-5-size);
+  font-weight: var(--text-preset-5-weight);
+  line-height: var(--text-preset-5-line);
+  letter-spacing: var(--text-preset-5-spacing);
+}
+
+.text-preset-6 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-6-size);
+  font-weight: var(--text-preset-6-weight);
+  line-height: var(--text-preset-6-line);
+  letter-spacing: var(--text-preset-6-spacing);
+}
+
+.text-preset-7 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-7-size);
+  font-weight: var(--text-preset-7-weight);
+  line-height: var(--text-preset-7-line);
+  letter-spacing: var(--text-preset-7-spacing);
+}
+
+.text-preset-7sb {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-7-size);
+  font-weight: var(--text-preset-7sb-weight);
+  line-height: var(--text-preset-7-line);
+  letter-spacing: var(--text-preset-7-spacing);
+}
+
+.text-preset-8 {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-8-size);
+  font-weight: var(--text-preset-8-weight);
+  line-height: var(--text-preset-8-line);
+  letter-spacing: var(--text-preset-8-spacing);
+}
+
+.text-preset-8-italic {
+  font-family: var(--font-sans);
+  font-size: var(--text-preset-8-size);
+  font-style: var(--text-preset-8-italic);
+  font-weight: var(--text-preset-8-weight);
+  line-height: var(--text-preset-8-line);
+  letter-spacing: var(--text-preset-8-spacing);
+}
+
+.text-preset-9 {
+  font-family: var(--font-code);
+  font-size: var(--text-preset-9-size);
+  font-weight: var(--text-preset-9-weight);
+  line-height: var(--text-preset-9-line);
+  letter-spacing: var(--text-preset-9-spacing);
+}
+
+.hljs {
+  font-family: var(--font-code);
+  font-size: var(--text-preset-8-size);
+  line-height: var(--text-preset-9-line);
+  letter-spacing: var(--text-preset-9-spacing);
+  font-weight: var(--text-preset-9-weight);
+  padding: var(--spacing-200);
+  border-radius: var(--radius-8);
+  overflow-x: auto;
+  overflow-y: visible;
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+  white-space: pre;
+  display: block;
+  max-width: 100%;
+  white-space: wrap;
+}
+
+pre code.hljs {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+}
+
+.dark .hljs {
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-700);
+}
+
+.hljs-tag,
+.hljs-selector-tag {
+  color: var(--color-orange-100);
+}
+
+.dark span.hljs-tag,
+.dark span.hljs-selector-tag {
+  color: var(--color-yellow-100);
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-property {
+  color: var(--color-purple-100);
+}
+.dark .hljs-attr,
+.dark .hljs-attribute,
+.dark .hljs-property {
+  color: var(--color-yellow-400);
+}
+
+.hljs-string,
+.hljs-value {
+  color: var(--color-green-700);
+  word-break: break-word;
+}
+.dark .hljs-string,
+.dark .hljs-value {
+  color: var(--color-yellow-400);
+  word-break: break-word;
+}
+
+.hljs-keyword,
+.hljs-rule {
+  color: var(--color-blue-400);
+}
+
+.dark .hljs-keyword,
+.dark .hljs-rule {
+  color: var(--color-blue-400);
+}
+
+/* Coloration pour les commentaires */
+.hljs-comment {
+  color: var(--color-neutral-600);
+  font-style: italic;
+}
+.dark .hljs-comment {
+  color: var(--color-neutral-400);
+}
+
+/* Coloration pour les nombres */
+span.hljs-number {
+  color: var(--color-blue-400);
+}
+.dark span.hljs-number {
+  color: var(--color-red-300);
+}
+
+/* Coloration pour les fonctions */
+.hljs-function {
+  color: var(--color-blue-100);
+}
+.dark span.hljs-function {
+  color: var(--color-blue-300);
+}
+
+/* Coloration pour les variables */
+.hljs-variable {
+  color: var(--color-neutral-900);
+}
+.dark .hljs-variable {
+  color: var(--color-neutral-100);
+}
+
+pre code.hljs {
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Coloration pour les sélecteurs de classe CSS */
+.hljs-selector-class {
+  color: var(--color-pink-100);
+}
+.dark .hljs-selector-class {
+  color: var(--color-pink-300);
+}
+
+/* Coloration pour les unités et dimensions */
+.hljs-number,
+.hljs-literal {
+  color: var(--color-purple-100);
+}
+.dark .hljs-number,
+.dark .hljs-literal {
+  color: var(--color-purple-200);
+}
+
+/* Coloration pour les @ rules CSS (media, etc.) */
+.hljs-at_rule {
+  color: var(--color-blue-100);
+}
+.dark .hljs-at_rule {
+  color: var(--color-blue-300);
+}
+
+/* Coloration pour les opérateurs */
+.hljs-operator {
+  color: var(--color-neutral-700);
+}
+.dark .hljs-operator {
+  color: var(--color-neutral-300);
+}
