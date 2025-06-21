@@ -23,7 +23,7 @@ app.use(limiter);
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
-      ? ["https://yourdomain.com"]
+      ? ["https://fullstack-persona-blog.netlify.app"]
       : ["http://localhost:3000", "http://localhost:5173"],
   credentials: true,
 };
